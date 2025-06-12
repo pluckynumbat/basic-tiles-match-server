@@ -9,4 +9,6 @@ func getLevel(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	fmt.Println("Server Coming Soon...")
+
+	http.HandleFunc("/level", getLevel)
 }
