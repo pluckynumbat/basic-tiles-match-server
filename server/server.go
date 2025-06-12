@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, "the level will be provided here \n")
