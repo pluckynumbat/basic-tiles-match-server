@@ -11,4 +11,6 @@ func main() {
 	fmt.Println("Server Coming Soon...")
 
 	http.HandleFunc("/level", getLevel)
+
+	http.ListenAndServe(":8090", nil)
 }
