@@ -54,7 +54,7 @@ const levelString = `{
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, levelString)
-	fmt.Println("level was requested and provided")
+	fmt.Println("sent the test level string")
 }
 
 func main() {
