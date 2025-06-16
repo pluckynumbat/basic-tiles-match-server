@@ -12,7 +12,7 @@ func getLevel(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	fmt.Println("Server Coming Soon...")
+	fmt.Println("Running the server...")
 
 	http.HandleFunc("/level", getLevel)
 
