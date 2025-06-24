@@ -79,6 +79,33 @@ var levelStrings = []string{
   
   "startingMoveCount": 30
 }`,
+	`{
+  "name": "From The Server 3",
+  
+  "seed": 30,
+  
+  "colorCount": 5,
+
+  "colorPalette": ["G","B","Y","V","R"],
+  
+  "gridLength": 9,
+  
+  "isStartingGridFixed": false,
+  
+  "goals": 
+  [
+    {
+      "goalType": "R",
+      "goalAmount": 30
+    },
+    {
+      "goalType": "Y",
+      "goalAmount": 30
+    }
+  ],
+  
+  "startingMoveCount": 40
+}`,
 }
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
