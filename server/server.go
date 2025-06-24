@@ -57,7 +57,7 @@ var levelStrings = []string{
   
   "seed": 20,
   
-  "colorCount": 5,
+  "colorCount": 4,
 
   "colorPalette": ["G","B","Y","V"],
   
