@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-const levelString = `{
+var levelStrings = []string{`{
   "name": "From The Server",
   
   "seed": 10,
@@ -50,7 +50,8 @@ const levelString = `{
   
   "startingMoveCount": 20
   
-}`
+}`}
+
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, levelString)
