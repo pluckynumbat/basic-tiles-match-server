@@ -6,7 +6,8 @@ import (
 	"net/http"
 )
 
-var levelStrings = []string{`{
+var levelStrings = []string{
+	`{
   "name": "From The Server",
   
   "seed": 10,
@@ -50,8 +51,35 @@ var levelStrings = []string{`{
   
   "startingMoveCount": 20
   
-}`}
+}`,
+	`{
+  "name": "From The Server 2",
+  
+  "seed": 20,
+  
+  "colorCount": 5,
 
+  "colorPalette": ["G","B","Y","V"],
+  
+  "gridLength": 7,
+  
+  "isStartingGridFixed": false,
+  
+  "goals": 
+  [
+    {
+      "goalType": "G",
+      "goalAmount": 20
+    },
+    {
+      "goalType": "A",
+      "goalAmount": 20
+    }
+  ],
+  
+  "startingMoveCount": 30
+}`,
+}
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, levelString)
