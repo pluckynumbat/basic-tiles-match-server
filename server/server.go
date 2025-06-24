@@ -109,7 +109,8 @@ var levelStrings = []string{
 }
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, levelString)
+	index := rand.IntN(len(levelStrings))
+	fmt.Fprintf(w, levelStrings[index])
 	fmt.Println("sent the test level string")
 }
 
