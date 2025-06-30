@@ -3,10 +3,12 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand/v2"
 	"net/http"
 )
 
-const levelString = `{
+var levelStrings = []string{
+	`{
   "name": "From The Server",
   
   "seed": 10,
@@ -50,10 +52,66 @@ const levelString = `{
   
   "startingMoveCount": 20
   
-}`
+}`,
+	`{
+  "name": "From The Server 2",
+  
+  "seed": 20,
+  
+  "colorCount": 4,
+
+  "colorPalette": ["G","B","Y","V"],
+  
+  "gridLength": 7,
+  
+  "isStartingGridFixed": false,
+  
+  "goals": 
+  [
+    {
+      "goalType": "G",
+      "goalAmount": 20
+    },
+    {
+      "goalType": "A",
+      "goalAmount": 20
+    }
+  ],
+  
+  "startingMoveCount": 30
+}`,
+	`{
+  "name": "From The Server 3",
+  
+  "seed": 30,
+  
+  "colorCount": 5,
+
+  "colorPalette": ["G","B","Y","V","R"],
+  
+  "gridLength": 9,
+  
+  "isStartingGridFixed": false,
+  
+  "goals": 
+  [
+    {
+      "goalType": "R",
+      "goalAmount": 30
+    },
+    {
+      "goalType": "Y",
+      "goalAmount": 30
+    }
+  ],
+  
+  "startingMoveCount": 40
+}`,
+}
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, levelString)
+	index := rand.IntN(len(levelStrings))
+	fmt.Fprintf(w, levelStrings[index])
 	fmt.Println("sent the test level string")
 }
 
