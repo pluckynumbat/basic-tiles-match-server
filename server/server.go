@@ -123,6 +123,7 @@ func testPing(w http.ResponseWriter, req *http.Request) {
 func main() {
 	fmt.Println("Running the server...")
 
+	http.HandleFunc("/ping", testPing)
 	http.HandleFunc("/level", getLevel)
 
 	log.Fatal(http.ListenAndServe(":8090", nil))
