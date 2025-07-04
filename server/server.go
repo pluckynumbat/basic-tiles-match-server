@@ -115,9 +115,15 @@ func getLevel(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("sent the test level string")
 }
 
+func testPing(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(w, "OK")
+	fmt.Println("sent the OK response for the test ping")
+}
+
 func main() {
 	fmt.Println("Running the server...")
 
+	http.HandleFunc("/ping", testPing)
 	http.HandleFunc("/level", getLevel)
 
 	log.Fatal(http.ListenAndServe(":8090", nil))
