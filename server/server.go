@@ -121,6 +121,10 @@ func getLevel(w http.ResponseWriter, req *http.Request) {
 
 func testPing(w http.ResponseWriter, req *http.Request) {
 	_, err := fmt.Fprintf(w, "OK")
+	if err != nil {
+		fmt.Printf("error occured while writing ping response: %v \n", err)
+		return
+	}
 	fmt.Println("sent the OK response for the test ping")
 }
 
