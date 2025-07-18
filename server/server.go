@@ -111,12 +111,20 @@ var levelStrings = []string{
 
 func getLevel(w http.ResponseWriter, req *http.Request) {
 	index := rand.IntN(len(levelStrings))
-	fmt.Fprintf(w, levelStrings[index])
+	_, err := fmt.Fprintf(w, levelStrings[index])
+	if err != nil {
+		fmt.Printf("error occured while writing level data: %v \n", err)
+		return
+	}
 	fmt.Println("sent the test level string")
 }
 
 func testPing(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "OK")
+	_, err := fmt.Fprintf(w, "OK")
+	if err != nil {
+		fmt.Printf("error occured while writing ping response: %v \n", err)
+		return
+	}
 	fmt.Println("sent the OK response for the test ping")
 }
 
