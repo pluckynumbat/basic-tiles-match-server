@@ -1,4 +1,4 @@
 # basic-tiles-match-server
 Hi There!\
 \
-This repo is for adding server support to the basic-tiles-match-game repo
+This repo adds minimal server support to the [basic-tiles-match-game](https://github.com/pluckynumbat/basic-tiles-match-game) repo
